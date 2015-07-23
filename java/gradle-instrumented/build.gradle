@@ -1,0 +1,44 @@
+apply plugin: 'java'
+compileJava {
+    options.incremental = true
+}
+
+version = '0.4.0'
+
+jar {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle Intrumentation Example for COLA Tests', 'Implementation-Version': version
+    }
+}
+
+apply plugin: 'maven'
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+
+configurations {
+    testAgent {
+        transitive = false
+    }
+}
+
+dependencies {
+    testAgent 'com.github.bmsantos:cola-tests:0.4.0'
+    compile 'commons-collections:commons-collections:3.2'
+    testCompile 'org.slf4j:slf4j-simple:1.7.7'
+    testCompile 'junit:junit:4.+'
+    testCompile 'com.github.bmsantos:cola-tests:0.4.0'
+}
+
+test.doFirst {
+    jvmArgs "-javaagent:${configurations.testAgent.singleFile}"
+}
+
+test {
+    useJUnit()
+}
+
+task wrapper(type: Wrapper) {
+    gradleVersion = '2.2.1'
+}

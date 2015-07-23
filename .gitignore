@@ -1,4 +1,6 @@
 target/
+.gradle/
+build/
 .project
 .metadata
 *.tmp
