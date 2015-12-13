@@ -1,4 +1,4 @@
-Feature: Should find beverages
+Feature: Find beverages
 
   Scenario Outline: Should find beverages
     Given a <beverage>
