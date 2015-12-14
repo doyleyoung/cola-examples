@@ -9,9 +9,12 @@ class UpdatePostTest : BaseColaTest() {
 
     @Feature
     val feature = """
+        @update-post
+        @exclude-update-post
         Feature: Update post
           As a user I want to edit posts so that I can update the information
 
+        @update-title
         Scenario: Should update post title
           Given a post
           And a title appended with Beer Rocks!
@@ -19,6 +22,7 @@ class UpdatePostTest : BaseColaTest() {
           Then the post title will be updated
           And the post content will not
 
+        @update-content
         Scenario: Should update post content
           Given a post
           And a content appended with Coffee 4 life!

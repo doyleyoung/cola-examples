@@ -9,6 +9,8 @@ class CreateNewPostTest : BaseColaTest() {
 
     @Feature
     val feature = """
+        @create-post
+        @update-post @update-title @update-content
         Feature: Create post
           As a user I want to create posts so that I can share information
 

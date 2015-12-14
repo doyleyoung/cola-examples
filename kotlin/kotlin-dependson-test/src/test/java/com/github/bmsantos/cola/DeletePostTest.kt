@@ -11,6 +11,7 @@ class DeletePostTest : BaseColaTest() {
 
     @Feature
     val feature = """
+        @delete-post
         Feature: Delete post
           As a user I want to delete posts so that I can deprecate information
 
