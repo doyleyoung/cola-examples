@@ -5,10 +5,10 @@
 
     <groupId>com.github.bmsantos</groupId>
     <artifactId>kotlin-dependson-tests</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.5.0</version>
 
     <properties>
-        <cola.version>0.4.1-SNAPSHOT</cola.version>
+        <cola.version>0.5.0</cola.version>
         <kotlin.version>1.0.0-beta-3595</kotlin.version>
     </properties>
 
