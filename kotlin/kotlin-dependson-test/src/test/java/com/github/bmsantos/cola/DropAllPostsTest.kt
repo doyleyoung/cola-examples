@@ -4,6 +4,7 @@ import com.github.kittinunf.fuel.core.Manager
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Before
 import org.junit.Test
+import kotlin.text.Regex
 
 class DropAllPostsTest {  // See Note 1 below
 
@@ -26,6 +27,13 @@ class DropAllPostsTest {  // See Note 1 below
         posts = retrieveExistingPosts()
         assertThat(posts).isEmpty()
     }
+
+    @Test
+    fun foo() {
+        println(Regex("\\s|\\n").replace("foo baa\nfdfdf\rgfgf", ""))
+    }
+
+
 }
 
 // Note 1: Because in-mem H2 DB cannot be hit from the outside, this test deletes all posts through a REST call.

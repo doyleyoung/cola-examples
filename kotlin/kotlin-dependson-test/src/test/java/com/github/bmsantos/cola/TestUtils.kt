@@ -32,7 +32,7 @@ fun Any.json(): String {
 
 inline fun <reified T> String.jsonTo(): T = Mapper.objectMapper.readValue(this, object : TypeReference<T>() {})
 
-fun Manager.Companion.coallesce() {
+fun Manager.Companion.coalesce() {
     Manager.instance.executor.shutdown();
     try {
         Manager.instance.executor.awaitTermination(Long.MAX_VALUE, TimeUnit.NANOSECONDS);
@@ -47,7 +47,7 @@ fun httpPostBlogPost(post: Post): String? {
     "posts".httpPost().body(post.json()).responseString { request, response, either ->
         if (either is Either.Right) result = either.right
     }
-    Manager.coallesce()
+    Manager.coalesce()
     return result
 }
 
@@ -56,7 +56,7 @@ fun httpGetBlogPost(postId: String?): String? {
     "posts/${postId}".httpGet().responseString { request, response, either ->
         if (either is Either.Right) result = either.right
     }
-    Manager.coallesce()
+    Manager.coalesce()
     return result
 }
 
@@ -65,7 +65,7 @@ fun httpGetBlogPosts(): String? {
     "posts".httpGet().header("Accept" to "application/json").responseString { request, response, either ->
         if (either is Either.Right) result = either.right
     }
-    Manager.coallesce()
+    Manager.coalesce()
     return result
 }
 
@@ -74,7 +74,7 @@ fun httpUpdateBlogPost(postId: String?, post: Post): String? {
     "posts/${postId}".httpPut().body(post.json()).responseString { request, response, either ->
         if (either is Either.Right) result = either.right
     }
-    Manager.coallesce()
+    Manager.coalesce()
     return result
 }
 
@@ -83,7 +83,7 @@ fun httpDeleteBlogPost(postId: String?): String? {
     "posts/${postId}".httpDelete().responseString { request, response, either ->
         if (either is Either.Right) result = either.right
     }
-    Manager.coallesce()
+    Manager.coalesce()
     return result
 }
 

@@ -8,11 +8,6 @@ import org.junit.Assert.assertThat
 import org.hamcrest.Matchers.contains
 import cola.ide.BaseColaTest
 
-/**
- * Created with IntelliJ IDEA.
- * Date: 11/29/14
- * Time: 10:48 PM
- */
 class KotlinColaTest : BaseColaTest() {
 
     private val stories: String = """
