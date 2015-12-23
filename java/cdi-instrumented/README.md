@@ -1,9 +1,12 @@
 # cdi-instrumented
 
- Language: Java
- Setup: maven + cola instrumentation
- Focus: COLA Test instrumentation
- Other technologies: CDI Junit Runner
+Language: Java
+
+Setup: maven + cola instrumentation
+
+Focus: COLA Test instrumentation
+
+Other technologies: CDI Junit Runner
 
 Simple example for COLA Tests instrumentation
 
