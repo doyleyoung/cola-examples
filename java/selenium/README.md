@@ -1,9 +1,12 @@
 # selenium
 
- Language: Java
- Setup: maven + cola instrumentation
- Focus: Using COLA Test with Selenium framework
- Other technologies: Selenium
+Language: Java
+
+Setup: maven + cola instrumentation
+
+Focus: Using COLA Test with Selenium framework
+
+Other technologies: Selenium
 
 Example setup for Selenium framework with COLA Tests
 
