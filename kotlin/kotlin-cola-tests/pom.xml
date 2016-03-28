@@ -4,11 +4,11 @@
 
     <groupId>com.github.bmsantos</groupId>
     <artifactId>kotlin-cola-tests</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.5</version>
 
     <properties>
-        <cola.version>0.5.0</cola.version>
-        <kotlin.version>1.0.0-beta-3595</kotlin.version>
+        <cola.version>0.5.5</cola.version>
+        <kotlin.version>1.0.1-1</kotlin.version>
     </properties>
 
     <dependencies>

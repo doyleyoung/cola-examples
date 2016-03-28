@@ -3,7 +3,7 @@ compileJava {
     options.incremental = true
 }
 
-version = '0.5.0'
+version = '0.5.5'
 
 jar {
     manifest {
@@ -24,11 +24,11 @@ configurations {
 }
 
 dependencies {
-    testAgent 'com.github.bmsantos:cola-tests:0.5.0'
+    testAgent 'com.github.bmsantos:cola-tests:0.5.5'
     compile 'commons-collections:commons-collections:3.2'
     testCompile 'org.slf4j:slf4j-simple:1.7.7'
     testCompile 'junit:junit:4.+'
-    testCompile 'com.github.bmsantos:cola-tests:0.5.0'
+    testCompile 'com.github.bmsantos:cola-tests:0.5.5'
 }
 
 test.doFirst {

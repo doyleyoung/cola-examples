@@ -1,8 +1,8 @@
 package cola.ide
 
 import com.github.bmsantos.core.cola.story.annotations.IdeEnabler
+import org.junit.Assert.fail
 import org.junit.Test
-import kotlin.test.fail
 
 public open class BaseColaTest {
 

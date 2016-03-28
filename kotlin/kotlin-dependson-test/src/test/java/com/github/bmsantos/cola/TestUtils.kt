@@ -3,7 +3,6 @@ package com.github.bmsantos.cola
 import com.fasterxml.jackson.core.type.TypeReference
 import com.fasterxml.jackson.databind.ObjectMapper
 import com.fasterxml.jackson.module.kotlin.KotlinModule
-import com.github.kittinunf.fuel.core.Either
 import com.github.kittinunf.fuel.core.Manager
 import com.github.kittinunf.fuel.httpDelete
 import com.github.kittinunf.fuel.httpGet
@@ -45,7 +44,8 @@ fun Manager.Companion.coalesce() {
 fun httpPostBlogPost(post: Post): String? {
     var result: String? = null
     "posts".httpPost().body(post.json()).responseString { request, response, either ->
-        if (either is Either.Right) result = either.right
+        val (data, error) = either
+        if (data != null) result = data
     }
     Manager.coalesce()
     return result
@@ -54,34 +54,38 @@ fun httpPostBlogPost(post: Post): String? {
 fun httpGetBlogPost(postId: String?): String? {
     var result: String? = null
     "posts/${postId}".httpGet().responseString { request, response, either ->
-        if (either is Either.Right) result = either.right
+        val (data, error) = either
+        if (data != null) result = data
     }
     Manager.coalesce()
     return result
 }
 
 fun httpGetBlogPosts(): String? {
-    var result: String? = null
+    var result: String? = "[]"
     "posts".httpGet().header("Accept" to "application/json").responseString { request, response, either ->
-        if (either is Either.Right) result = either.right
+        val (data, error) = either
+        if (data != null) result = data
     }
     Manager.coalesce()
     return result
 }
 
 fun httpUpdateBlogPost(postId: String?, post: Post): String? {
-    var result: String? = null
+    var result: String? = "[]"
     "posts/${postId}".httpPut().body(post.json()).responseString { request, response, either ->
-        if (either is Either.Right) result = either.right
+        val (data, error) = either
+        if (error != null) result = data
     }
     Manager.coalesce()
     return result
 }
 
 fun httpDeleteBlogPost(postId: String?): String? {
-    var result: String? = null
+    var result: String? = "[]"
     "posts/${postId}".httpDelete().responseString { request, response, either ->
-        if (either is Either.Right) result = either.right
+        val (data, error) = either
+        if (error != null) result = data
     }
     Manager.coalesce()
     return result

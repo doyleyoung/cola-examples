@@ -5,11 +5,11 @@
 
     <groupId>com.github.bmsantos</groupId>
     <artifactId>kotlin-dependson-tests</artifactId>
-    <version>0.5.0</version>
+    <version>0.5.5</version>
 
     <properties>
-        <cola.version>0.5.0</cola.version>
-        <kotlin.version>1.0.0-beta-3595</kotlin.version>
+        <cola.version>0.5.5</cola.version>
+        <kotlin.version>1.0.1-1</kotlin.version>
     </properties>
 
     <dependencies>
@@ -26,7 +26,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.module</groupId>
             <artifactId>jackson-module-kotlin</artifactId>
-            <version>2.6.4</version>
+            <version>2.7.3</version>
         </dependency>
         <dependency>
             <groupId>com.j2html</groupId>
@@ -80,7 +80,7 @@
         <dependency>
             <groupId>com.github.kittinunf.fuel</groupId>
             <artifactId>fuel</artifactId>
-            <version>0.61</version>
+            <version>1.1.1</version>
             <scope>test</scope>
         </dependency>
         <dependency>
